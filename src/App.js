@@ -1,24 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import { Provider } from "react-redux";
+
+import "./normalize.css";
+import "./App.css";
+
+import configureStore from "./store/configureStore";
+
+import Navbar from "./components/Navbar";
+import LandingBanners from "./components/LandingBanners";
+import SwippableProducts from "./components/SwippableProducts";
+import TextedBanner from "./components/TextedBanner";
+import FAQ from "./components/FAQ";
+import CallUs from "./components/CallUs";
 
 function App() {
+  const store = configureStore();
+  document.title = "سی‌ای گیفت";
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <Navbar />
+        <LandingBanners />
+        <SwippableProducts
+          label="جدید ترین گیفت کارت هامون"
+          subLabel="محصولات جدیدمون"
+          link="#"
+        />
+        <TextedBanner />
+        <SwippableProducts label="جدید ترین گیفت کارت هامون" />
+        <SwippableProducts
+          label="محبوب ترین اکانت های بازی هامون"
+          subLabel="اکانت های بازیمون"
+          link="/"
+        />
+        <TextedBanner imageOnLeft />
+        <FAQ />
+        <CallUs />
+      </div>
+    </Provider>
   );
 }
 
