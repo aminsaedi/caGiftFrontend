@@ -1,10 +1,12 @@
 import React from "react";
 import MegaItem from "./MegaItem";
 import CartNavbar from "./CartNavbar";
+import NavbarUserStatus from "./NabvarUserStatus";
 
 const Navbar = () => {
   return (
     <nav className="navbar">
+      <NavbarUserStatus />
       <CartNavbar />
       <MegaItem
         label="دورهمی هامون"

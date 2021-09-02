@@ -11,6 +11,7 @@ import SwippableProducts from "./components/SwippableProducts";
 import TextedBanner from "./components/TextedBanner";
 import FAQ from "./components/FAQ";
 import CallUs from "./components/CallUs";
+import Footer from "./components/Footer";
 
 function App() {
   const store = configureStore();
@@ -35,6 +36,7 @@ function App() {
         <TextedBanner imageOnLeft />
         <FAQ />
         <CallUs />
+        <Footer />
       </div>
     </Provider>
   );
